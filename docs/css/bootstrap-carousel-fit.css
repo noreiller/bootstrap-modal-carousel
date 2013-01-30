@@ -1,0 +1,51 @@
+.modal .carousel-fit {
+	margin: 0;
+}
+.carousel-fit .carousel-inner,
+.carousel-fit .carousel-inner > .item {
+	height: 100%;
+}
+.carousel-fit .carousel-inner > .item,
+.carousel-fit .carousel-inner > .item > img {
+	max-height: 100%;
+}
+.carousel-fit .carousel-inner > .item {
+	text-align: center;
+}
+.carousel-fit .carousel-inner > .item > img {
+	display: inline-block;
+}
+.carousel-fit .carousel-inner > .item > .carousel-caption {
+	text-align: left;
+}
+.carousel-fit.carousel-caption-active .carousel-inner > .item > .carousel-caption,
+.carousel-fit.carousel-caption-hide .carousel-inner > .item > .carousel-caption,
+.carousel-fit.carousel-caption-hover .carousel-inner > .item > .carousel-caption {
+	-webkit-transition: bottom 1s;
+	-moz-transition: bottom 1s;
+	-ms-transition: bottom 1s;
+	-o-transition: bottom 1s;
+	transition: bottom 1s;
+}
+
+/* display caption when active */
+.carousel-fit.carousel-caption-active .carousel-inner > .item > .carousel-caption {
+	bottom: -100%;
+}
+.carousel-fit.carousel-caption-active .carousel-inner > .item.active > .carousel-caption {
+	bottom: 0;
+}
+
+/* display caption when hover */
+.carousel-fit.carousel-caption-hover .carousel-inner > .item > .carousel-caption {
+	bottom: -100%;
+}
+.carousel-fit.carousel-caption-hover .carousel-inner > .item.active > .carousel-caption:hover,
+.carousel-fit.carousel-caption-hover .carousel-inner > .item.active > img:hover + .carousel-caption {
+	bottom: 0;
+}
+
+/* hide caption when hover */
+.carousel-fit.carousel-caption-hide .carousel-inner > .item.active > img:hover + .carousel-caption {
+	bottom: -100%;
+}

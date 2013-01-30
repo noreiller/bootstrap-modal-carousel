@@ -1,0 +1,15 @@
+{
+	"name": "boostrap-modal-carousel",
+	"main": [
+		"docs/css/bootstrap-modal-fullscreen.css",
+		"docs/css/bootstrap-carousel-fit.css",
+		"docs/js/bootstrap-carousel-fit.js",
+		"docs/js/bootstrap-modal-local.js",
+		"docs/js/bootstrap-modal-fullscreen.js",
+		"docs/js/bootstrap-modal-carousel.js",
+	],
+	"version": "1.0.0",
+	"dependencies": {
+		"bootstrap": "~2.2.2"
+	}
+}

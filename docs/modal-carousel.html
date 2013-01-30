@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap modal carousel : modal-carousel</title>
+		<meta name="description" content="Kerbi" />
+		<meta name="keywords" content="Kerbi" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="../components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
+		<link href="../components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+		<link href="css/bootstrap-modal-fullscreen.css" rel="stylesheet" /> 
+		<link href="css/bootstrap-carousel-fit.css" rel="stylesheet" /> 
+		<link href="css/demos.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h1>Bootstrap modal carousel</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span4">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="index.html">Presentation</a></li>
+						<li class="active"><a href="modal-carousel.html">Modal-carousel</a></li>
+						<li><a href="carousel-fit.html">Carousel-fit</a></li>
+						<li><a href="modal-local.html">Modal-local</a></li>
+						<li><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
+					</ul>
+				</div>
+				<div class="span8">
+					<h3>Purpose</h3>
+
+					<p>The <code>bootstrap-modal-carousel.js</code> library is made to display a carousel in a fullscreen modal box. The slides fit automatically.</p>
+
+					<p>The script depends on <code>bootstrap-modal-fullscreen</code>, <code>bootstrap-modal-local</code> and <code>bootstrap-carousel-fit</code> libraries.</p>
+					<hr />
+
+					<h3>Demo</h3>
+					<p>
+						<button id="myButtonFullscreen" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" data-local="#myCarousel">
+							<i class="icon-fullscreen icon-white"></i>
+							<span>View the carousel in fullscreen</span>
+						</button>
+						<button id="myButtonModal" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" data-local="#myCarousel">
+							<i class="icon-resize-full icon-white"></i>
+							<span>View the carousel in a modal box</span>
+						</button>
+					</p>
+
+					<div id="myCarousel" class="carousel slide carousel-fit carousel-caption-active">
+						<!-- Carousel items -->
+						<div class="carousel-inner"></div>
+						<!-- Carousel nav -->
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="myModal" class="modal hide fade modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">
+					<i class="icon-remove icon-white"></i>
+					<span>Close</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>One fine body…</p>
+			</div>
+		</div>
+
+		<script src="../components/bootstrap/docs/assets/js/jquery.js" type="text/javascript"></script>
+		<script src="../components/bootstrap/docs/assets/js/bootstrap.js" type="text/javascript"></script>
+		<script src="js/bootstrap-modal-local.js" type="text/javascript"></script>
+		<script src="js/bootstrap-modal-fullscreen.js" type="text/javascript"></script>
+		<script src="js/bootstrap-modal-carousel.js" type="text/javascript"></script>
+		<script src="js/bootstrap-carousel-fit.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		(function ($) {
+
+			// Load images via flickr for demonstration purposes:
+			$.ajax({
+				url: 'http://api.flickr.com/services/rest/',
+				data: {
+					format: 'json'
+					, method: 'flickr.interestingness.getList'
+					, api_key: '592e96960de6a476d84cff71a495867f'
+					, per_page: 10
+					, extras: 'description, url_l, l_width, l_height'
+				},
+				dataType: 'jsonp',
+				jsonp: 'jsoncallback'
+			}).done(function (data) {
+				var carouselInner = $('#myCarousel .carousel-inner');
+
+				$.each(data.photos.photo, function (index, photo) {
+					if (photo.url_l) {
+						$('<div class="item"/>')
+							.append(
+								$('<img />').prop({
+									'src': photo.url_l
+								})
+								, $('<div class="carousel-caption">')
+									.append('<h4>' + photo.title + '</h4>')
+									.append('<p>' + photo.description._content + '</p>')
+							)
+							.appendTo(carouselInner)
+						;
+					}
+				});
+
+				carouselInner.find('.item:first').addClass('active');
+
+				// Init the carousel and fit it on slid event only when in fullscreen modal
+				$('#myCarousel')
+					.carousel({
+						interval: 5000
+						, pause: 'hover'
+						, modalize: true
+					})
+				;
+			});
+
+			// Enable the modal fullscreen when clicking on the fullscreen button
+			$('#myButtonFullscreen').on('click', function (e) {
+				$('#myModal').addClass('modal-fullscreen');
+			});
+
+			// Disable the modal fullscreen when clicking on the modal button
+			$('#myButtonModal').on('click', function (e) {
+				$('#myModal').removeClass('modal-fullscreen');
+			});
+
+		})(jQuery);
+		</script>
+	</body>
+</html>

@@ -81,6 +81,8 @@
 		<script src="js/bootstrap-carousel-fit.js" type="text/javascript"></script>
 		<script type="text/javascript">
 		(function ($) {
+			// Hide the carousel while we load it from Flickr
+			$('#myCarousel').hide();
 
 			// Load images via flickr for demonstration purposes:
 			$.ajax({
@@ -110,19 +112,26 @@
 							)
 							.appendTo(carouselInner)
 						;
+
+						if (index == 0) {
+							carouselInner.find('img:first').load(function () {
+
+								// When the first image is loaded, init the carousel and fit it 
+								// on slid event only when in fullscreen modal
+								$('#myCarousel')
+									.show()
+									.carousel({
+										interval: 5000
+										, pause: 'hover'
+										, modalize: true
+									})
+								;
+							});
+						}
 					}
 				});
 
 				carouselInner.find('.item:first').addClass('active');
-
-				// Init the carousel and fit it on slid event only when in fullscreen modal
-				$('#myCarousel')
-					.carousel({
-						interval: 5000
-						, pause: 'hover'
-						, modalize: true
-					})
-				;
 			});
 
 			// Enable the modal fullscreen when clicking on the fullscreen button

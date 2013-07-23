@@ -2,14 +2,16 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>Bootstrap modal carousel : modal-local</title>
+		<title>Bootstrap modal carousel : modal-local </title>
 		<meta name="description" content="Kerbi" />
 		<meta name="keywords" content="Kerbi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
 		<link href="components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+		<link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
 		<link href="css/demos.css" rel="stylesheet" />
+		
 	</head>
 	<body>
 		<div class="container">
@@ -19,13 +21,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span4">
+				<div class="span3">
 					<ul class="nav nav-pills nav-stacked">
-						<li><a href="index.html">Presentation</a></li>
-						<li><a href="modal-carousel.html">Modal-carousel</a></li>
-						<li><a href="carousel-fit.html">Carousel-fit</a></li>
-						<li class="active"><a href="modal-local.html">Modal-local</a></li>
-						<li><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
+						<li class=""><a href="index.html">Presentation</a></li>
+						<li class=""><a href="modal-carousel.html">Modal-carousel</a></li>
+						<li class=""><a href="carousel-fit.html">Carousel-fit</a></li>
+						<li class=" active "><a href="modal-local.html">Modal-local</a></li>
+						<li class=""><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
 					</ul>
 
 					<ul class="nav nav-pills">
@@ -37,76 +39,82 @@
 						</li>
 					</ul>
 				</div>
-				<div class="span8">
-					<h3>Purpose</h3>
-					<p>The <code>bootstrap-modal-local.js</code> library let you show in a modal box a part of content of your page.</p>
+				<div class="span9">
 
-					<hr />
 
-					<h3>Demo</h3>
-					<p>
-						<button id="myButton" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" data-local="#myContent">
-							<i class="icon-resize-full icon-white"></i>
-							<span>View the following content in modal</span>
-						</button>
-					</p>
+<h3>Purpose</h3>
+<p>The <code>bootstrap-modal-local.js</code> library let you show in a modal box a part of content of your page.</p>
 
-					<div id="myContent"></div>
+<hr />
+
+<h3>Demo</h3>
+<p>
+	<button id="myButton" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" data-local="#myContent">
+		<i class="icon-resize-full icon-white"></i>
+		<span>View the following content in modal</span>
+	</button>
+</p>
+
+<div id="myContent"></div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Modal header</h3>
+	</div>
+	<div class="modal-body">
+		<p>One fine body…</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+	</div>
+</div>
+
+<hr />
+
+<h3>Code</h3>
+<p>Add the attribute <code>data-local="#myContent"</code> to the button and it will detach the content of the <code>#myContent</code> element to <code>#myModal</code>.</p>
+
+<pre class="prettyprint linenums">&lt;button id=&quot;myButton&quot; type=&quot;button&quot; class=&quot;btn btn-success&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; data-local=&quot;#myContent&quot;&gt;
+	&lt;i class=&quot;icon-resize-full icon-white&quot;&gt;&lt;/i&gt;
+	&lt;span&gt;View the following content in modal&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;div id=&quot;myContent&quot;&gt;&lt;/div&gt;
+
+&lt;div id=&quot;myModal&quot; class=&quot;modal hide fade&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+	&lt;div class=&quot;modal-header&quot;&gt;
+		&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
+		&lt;h3&gt;Modal header&lt;/h3&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;modal-body&quot;&gt;
+		&lt;p&gt;One fine body&hellip;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;modal-footer&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<hr />
+
+<h3>JS</h3>
+<pre class="prettyprint linenums">&lt;script src=&quot;../components/bootstrap/docs/assets/js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../components/bootstrap/docs/assets/js/bootstrap.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-modal-local.js&quot;&gt;&lt;/script&gt;</pre>
+
 				</div>
 			</div>
 		</div>
 
-		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h3>Modal header</h3>
-			</div>
-			<div class="modal-body">
-				<p>One fine body…</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="btn" data-dismiss="modal">Close</a>
-			</div>
-		</div>
-
-		<script src="components/bootstrap/docs/assets/js/jquery.js" type="text/javascript"></script>
-		<script src="components/bootstrap/docs/assets/js/bootstrap.js" type="text/javascript"></script>
-		<script src="js/bootstrap-modal-local.js" type="text/javascript"></script>
-		<script type="text/javascript">
-		(function ($) {
-
-			// Load images via flickr for demonstration purposes:
-			$.ajax({
-				url: 'http://api.flickr.com/services/rest/',
-				data: {
-					format: 'json'
-					, method: 'flickr.interestingness.getList'
-					, api_key: '592e96960de6a476d84cff71a495867f'
-					, per_page: 1
-					, extras: 'description, url_m'
-				},
-				dataType: 'jsonp',
-				jsonp: 'jsoncallback'
-			}).done(function (data) {
-				$.each(data.photos.photo, function (index, photo) {
-					if (photo.url_m) {
-						$('#myContent')
-							.append(
-								$('<img />').prop({
-									'src': photo.url_m
-								})
-								, $('<p>')
-									.append('<strong>' + photo.title + '</strong>')
-									.append('<br />')
-									.append(photo.description._content)
-							)
-						;
-					}
-				});
-			});
-
-		})(jQuery);
-		</script>
+		<script src="components/bootstrap/docs/assets/js/jquery.js"></script>
+		<script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+		<script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+		<script src="js/demos.js"></script>
+		
+			<script src="js/bootstrap-modal-local.js"></script>
+		
+			<script src="js/demo-modal-local.js"></script>
+		
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-24259046-6']);
@@ -119,3 +127,4 @@
 		</script>
 	</body>
 </html>
+

@@ -49,3 +49,9 @@
 .carousel-fit.carousel-caption-hide .carousel-inner > .item.active > img:hover + .carousel-caption {
 	bottom: -100%;
 }
+
+@media (max-width: 480px) {
+	.carousel-fit .carousel-caption {
+		position: absolute;
+	}
+}

@@ -23,22 +23,23 @@
 		modalize: function () {
 			if (this.options.modalize && !this.modalized) {
 				this.$element
-					.on('modal-hide modal-shown', function (e) {
-						if (e.type == 'modal-shown') {
+					.on('modal-hide modal-shown', function (event) {
+						if (event.type == 'modal-shown') {
 							$(this).data('height', $(this).data('carousel').height);
 							$(this).data('carousel').height = $(this).parents('.modal-body:first').height();
 						}
-						else if (e.type == 'modal-hide') {
+						else if (event.type == 'modal-hide') {
 							$(this).height($(this).data('height'));
 							$(this).data('carousel').height = $(this).data('height');
 							$(this).data('height', undefined);
+							$(this).find('.carousel-caption').css({ 'left': 0, 'right': 0});
 						}
 
 						$(this).carousel('fit');
 					})
 					.on('fit', function () {
-						var 
-							height = $(this).parents('.modal-fullscreen').height()
+						var
+							modalHeight = $(this).parents('.modal-fullscreen').height()
 							, $slide = $(this).find('.active')
 						;
 
@@ -48,32 +49,40 @@
 
 						var $img = $slide.find('img:first');
 
-						if (
-							$(this).parents('.modal-fullscreen:first').length 
-							&& $(this).data('carousel').height != $(this).parents('.modal-fullscreen').height()
-							&& (
-								$(this).height() < $img[0].naturalHeight
-								|| $(this).parents('.modal-fullscreen').height() > $img[0].offsetHeight
-							)
-						) {
+						if ($(this).parents('.modal-fullscreen:first').length) {
+							var status = 0;
 
-							if (0 && $img[0].naturalHeight < height) {
-								height = $img[0].naturalHeight;
+							if (
+								($(this).data('carousel').height != modalHeight
+									&& (
+										$(this).height() < $img[0].naturalHeight
+										|| modalHeight > $img[0].offsetHeight
+								))
+							) {
+								status = 2;
+							}
+							else if (modalHeight < $img[0].offsetHeight
+							) {
+								status = 1;
 							}
 
-							$(this).css({ 
-								'height': height
-							});
+							if (status > 0) {
+								$(this).css({
+									'height': modalHeight
+								});
 
-							$(this).data('carousel').height = height;
-							
-							$(this).carousel('fit');
-						}
-						else if ($(this).parents('.modal-fullscreen:first').length) {
+								$(this).data('carousel').height = modalHeight;
+							}
+
+							if (status > 1) {
+								$(this).carousel('fit');
+							}
+
 							$(this).parents('.modal-fullscreen:first').modal('fit');
 						}
 					})
 				;
+
 				this.modalized = true;
 			}
 		}
@@ -84,7 +93,7 @@
 		var result = _fn.apply(this, arguments);
 
 		this.each(function () {
-			var 
+			var
 				$this = $(this)
 				, data = $this.data('carousel')
 			;

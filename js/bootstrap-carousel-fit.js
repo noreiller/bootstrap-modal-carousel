@@ -14,14 +14,14 @@
 	}
 }(function ($) {
 	'use strict';
-	
+
 	$.extend($.fn.carousel.Constructor.prototype, {
 		fit: function (item) {
 			if (this.fitting || !this.$element.hasClass('carousel-fit')) return;
 
 			this.fitting = true;
 
-			var 
+			var
 				that = this
 				, slide = typeof item !== 'undefined' ? item : 'active'
 			;
@@ -40,13 +40,13 @@
 				, e = $.Event('fit')
 				, unfit = function () {
 					$caption.css({
-						'left': 0
-						, 'right': 0
-					});					
+						'left': 0 || $caption.css('left')
+						, 'right': 0 || $caption.css('right')
+					});
 				}
 				, adaptWrapper = function () {
 					if (that.$element.height() != $img[0].offsetHeight) {
-						that.$element.animate({ 
+						that.$element.animate({
 							'height': $img[0].offsetHeight
 						}, adaptCaption);
 					}
@@ -61,7 +61,7 @@
 					});
 
 					that.fitting = false;
-					
+
 					that.$element.trigger(e);
 				}
 			;
@@ -84,7 +84,7 @@
 		var result = _fn.apply(this, arguments);
 
 		this.each(function () {
-			var 
+			var
 				$this = $(this)
 				, data = $this.data('carousel')
 			;
@@ -106,7 +106,7 @@
 
 	var _slide = $.fn.carousel.Constructor.prototype.slide;
 	$.fn.carousel.Constructor.prototype.slide = function () {
-		var 
+		var
 			that = this
 			, result = _slide.apply(this, arguments)
 		;

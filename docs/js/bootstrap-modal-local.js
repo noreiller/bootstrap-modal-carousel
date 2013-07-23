@@ -16,7 +16,7 @@
 	'use strict';
 
 	$(document).on('click.modal.data-api', '[data-toggle="modal"]', function (event) {
-		var 
+		var
 			$this = $(this)
 			, href = $this.attr('href')
 			, $local = $($this.attr('data-local') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
@@ -24,19 +24,20 @@
 		;
 
 		if ($local.length && $target.length) {
-			var 
+			var
 				$next = $local.next()
 				, $prev = $local.prev().length
 				, $parent = $local.parent()
 				, $detached = $local.detach()
-				, e = $.Event('moved')
+				, movedEvent = $.Event('moved')
 			;
 
 			$target.find('.modal-body').empty().append($detached);
-			$detached.trigger(e);
+			$detached.trigger(movedEvent);
+			$detached.trigger($.Event('shown'));
 
-			$target.one('show shown hide hidden', function (e) {
-				$detached.trigger('modal-' + e.type);
+			$target.one('show shown hide hidden', function (event) {
+				$detached.trigger('modal-' + event.type);
 			});
 
 			$target.on('hide', function () {
@@ -50,7 +51,7 @@
 					$detached.detach().appendTo($parent);
 				}
 
-				$detached.trigger(e);
+				$detached.trigger(movedEvent);
 			});
 		}
 	});

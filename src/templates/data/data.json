@@ -1,0 +1,67 @@
+{
+	"index": {
+		"key": "index"
+		, "name": ""
+		, "menu": {
+			"index": true
+		}
+	}
+	, "carousel-fit": {
+		"key": "carousel-fit"
+		, "name": "carousel-fit"
+		, "menu": {
+			"carouselFit": true
+		}
+		, "css": [
+			{ "path": "css/bootstrap-carousel-fit.css" }
+		]
+		, "js": [
+			{ "path": "js/bootstrap-carousel-fit.js" }
+			, { "path": "js/demo-carousel-fit.js" }
+		]
+	}
+	, "modal-carousel": {
+		"key": "modal-carousel"
+		, "name": "modal-carousel"
+		, "menu": {
+			"modalCarousel": true
+		}
+		, "css": [
+			{ "path": "css/bootstrap-modal-fullscreen.css" }
+			, { "path": "css/bootstrap-carousel-fit.css" }
+		]
+		, "js": [
+			{ "path": "js/bootstrap-carousel-fit.js" }
+			, { "path": "js/bootstrap-modal-carousel.js" }
+			, { "path": "js/bootstrap-modal-fullscreen.js" }
+			, { "path": "js/bootstrap-modal-local.js" }
+			, { "path": "js/demo-modal-carousel.js" }
+		]
+	}
+	, "modal-fullscreen": {
+		"key": "modal-fullscreen"
+		, "name": "modal-fullscreen"
+		, "menu": {
+			"modalFullscreen": true
+		}
+		, "css": [
+			{ "path": "css/bootstrap-modal-fullscreen.css" }
+		]
+		, "js": [
+			{ "path": "js/bootstrap-modal-fullscreen.js" }
+			, { "path": "js/demo-modal-fullscreen.js" }
+		]
+	}
+	, "modal-local": {
+		"key": "modal-local"
+		, "name": "modal-local"
+		, "menu": {
+			"modalLocal": true
+		}
+		, "css": []
+		, "js": [
+			{ "path": "js/bootstrap-modal-local.js" }
+			, { "path": "js/demo-modal-local.js" }
+		]
+	}
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap modal carousel {{#if name}}: {{name}} {{/if}}</title>
+		<meta name="description" content="Kerbi" />
+		<meta name="keywords" content="Kerbi" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="../components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
+		<link href="../components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+		<link href="../components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
+		<link href="css/demos.css" rel="stylesheet" />
+		{{#each css}}
+			<link href="{{path}}" rel="stylesheet" />
+		{{/each}}
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h1>Bootstrap modal carousel</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<ul class="nav nav-pills nav-stacked">
+						<li class="{{#if menu.index}} active {{/if}}"><a href="index.html">Presentation</a></li>
+						<li class="{{#if menu.modalCarousel}} active {{/if}}"><a href="modal-carousel.html">Modal-carousel</a></li>
+						<li class="{{#if menu.carouselFit}} active {{/if}}"><a href="carousel-fit.html">Carousel-fit</a></li>
+						<li class="{{#if menu.modalLocal}} active {{/if}}"><a href="modal-local.html">Modal-local</a></li>
+						<li class="{{#if menu.modalFullscreen}} active {{/if}}"><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
+					</ul>
+
+					<ul class="nav nav-pills">
+						<li>
+							<a href="https://github.com/noreiller/bootstrap-modal-carousel">
+								<i class="icon-info-sign"></i>
+								<span>GitHub project</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="span9">

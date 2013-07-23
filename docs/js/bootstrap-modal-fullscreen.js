@@ -20,11 +20,17 @@
 			if (this.$element.hasClass('modal-fullscreen')) {
 				var
 					modalHeight = this.$element.find('.modal-body:first').height()
-					, documentHeight = $(document).height()
+					, viewportHeight = $(window).height()
 				;
 
-				this.$element.find('.modal-body')[this.$element.hasClass('in') ? 'animate' : 'css']({
-					'margin-top': ((documentHeight - modalHeight) / 2) + 'px'
+				var top = viewportHeight < modalHeight ? 0 : ((viewportHeight - modalHeight) / 2);
+
+				if (modalHeight == 0) {
+					top = 0;
+				}
+
+				this.$element.find('.modal-body')[this.$element.is('.fade') && this.$element.hasClass('in') ? 'animate' : 'css']({
+					'margin-top': top + 'px'
 				});
 			}
 			else {
@@ -32,7 +38,7 @@
 			}
 		}
 		, unfit: function () {
-			this.$element.find('.modal-body')[this.$element.hasClass('in') ? 'animate' : 'css']({
+			this.$element.find('.modal-body')[this.$element.is('.fade') && this.$element.hasClass('in') ? 'animate' : 'css']({
 				'margin-top': '0'
 			});
 		}
@@ -40,7 +46,7 @@
 
 	var _backdrop = $.fn.modal.Constructor.prototype.backdrop;
 	$.fn.modal.Constructor.prototype.backdrop = function () {
-		var 
+		var
 			that = this
 			, oldCallback = arguments[0]
 			, newCallback = function () {
@@ -50,7 +56,11 @@
 		;
 
 		arguments[0] = newCallback;
-		
+
 		return _backdrop.apply(this, arguments);
 	};
+
+	$(window).on('resize', function () {
+		$('.modal-fullscreen').modal('fit');
+	});
 }));

@@ -5,7 +5,7 @@
 		data: {
 			format: 'json'
 			, method: 'flickr.interestingness.getList'
-			, api_key: '592e96960de6a476d84cff71a495867f'
+			, api_key: '7b6adc01d126207c79f41b80383a22b8'
 			, per_page: 1
 			, extras: 'description, url_m'
 		},

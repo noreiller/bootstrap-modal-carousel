@@ -1,8 +1,0 @@
-html {
-	overflow-y: scroll;
-}
-
-.row + .row,
-.row-fluid + .row-fluid {
-	margin-top: 20px;
-}

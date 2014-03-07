@@ -3,81 +3,117 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap modal carousel </title>
-		<meta name="description" content="Kerbi" />
-		<meta name="keywords" content="Kerbi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
-		<link href="components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
-		<link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
-		<link href="css/demos.css" rel="stylesheet" />
-		
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal-carousel.min.css">
+		<style>
+			.nav .external {
+				margin-top: 30px;
+			}
+			.row + .row,
+			.row-fluid + .row-fluid {
+				margin-top: 20px;
+			}
+			.btn .glyphicon + span {
+				margin-left: .5em;
+			}
+			@media (min-width: 768px) {
+				h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
+					margin-top: 0;
+				}
+			}
+			
+		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span12">
+				<div class="col-sm-12">
 					<h1>Bootstrap modal carousel</h1>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span3">
+				<div class="col-sm-3">
 					<ul class="nav nav-pills nav-stacked">
-						<li class=" active "><a href="index.html">Presentation</a></li>
-						<li class=""><a href="modal-carousel.html">Modal-carousel</a></li>
-						<li class=""><a href="carousel-fit.html">Carousel-fit</a></li>
-						<li class=""><a href="modal-local.html">Modal-local</a></li>
-						<li class=""><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
-					</ul>
-
-					<ul class="nav nav-pills">
-						<li>
+						<li class=" active ">
+							<a href="index.html">Presentation</a>
+						</li>
+						<li class="">
+							<a href="modal-carousel.html">Modal-carousel</a>
+							
+						</li>
+						<li class="">
+							<a href="carousel-fit.html">Carousel-fit</a>
+							
+						</li>
+						<li class="">
+							<a href="modal-local.html">Modal-local</a>
+							
+						</li>
+						<li class="">
+							<a href="modal-fullscreen.html">Modal-fullscreen</a>
+							
+						</li>
+						<li class="">
+							<a href="more-examples.html">More examples</a>
+							
+						</li>
+						<li class="external">
 							<a href="https://github.com/noreiller/bootstrap-modal-carousel">
-								<i class="icon-info-sign"></i>
+								<span class="glyphicon glyphicon-new-window"></span>
 								<span>GitHub project</span>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div class="span9">
+				<div class="col-sm-9">
 
 
 <p>This set of JavaScript and CSS extensions to Twitter Boostrap was made in order to display a carousel in fullscreen. I decided to extend the libraries step by step by separate the feature I needed, which resulted in the following independent "packages" : </p>
 <ol>
 	<li>the ability to detach a content to a modal box : <a href="modal-local.html">Modal-local</a></li>
 	<li>make a modal into fullscreen mode : <a href="modal-fullscreen.html">Modal-fullscreen</a>
-	<li>a carousel which fit itself according to the different images and captions : <a href="carousel-fit.html">Carousel-fit</a></li>
+	<li>a carousel which fits itself according to the different images and captions : <a href="carousel-fit.html">Carousel-fit</a></li>
 	<li>and one to link them all : <a href="modal-carousel.html">Modal-carousel</a>.</li>
 </ol>
 
 <p>Feel free to use them and/or contribute to make them better.<p>
 
-<p>Todo:</p>
+<h2>Usage</h2>
+
+<p>In the <code>dist</code> folder, you'll find the <code>CSS</code> and <code>JS</code> assets. To quickly use the plugins, I also packaged and minified versions.</p>
+
+<h2>Changelog</h2>
+<h3>2.0.0</h3>
 <ul>
-	<li>Propose a minified package of the JavaScripts and CSS</li>
-	<li>A lazy loader for images</li>
-	<li>Surely many things...</li>
+	<li>Updated the twitter bootstrap dependency to version 3.x</li>
+	<li>Added LESS support</li>
+	<li>Added minified versions of CSS and JS assets</li>
+	<li>Replaced Flickr images with blank images</li>
+</ul>
+
+<h3>1.1.0</h3>
+<ul>
+	<li>Added compatibility on phones and tablets in responsive mode</li>
+	<li>Added some docs elements</li>
+	<li>The docs pages are now generated with grunt</li>
+	<li>Upgraded to Bootstrap v2.3.2</li>
+</ul>
+
+<h3>1.0.0</h3>
+<ul>
+	<li>First version</li>
 </ul>
 
 				</div>
 			</div>
 		</div>
 
-		<script src="components/bootstrap/docs/assets/js/jquery.js"></script>
-		<script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
-		<script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
-		<script src="js/demos.js"></script>
-		
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-24259046-6']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-modal-carousel.min.js"></script>
+		<script src="js/demo.min.js"></script>
 	</body>
 </html>
 

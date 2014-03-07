@@ -3,128 +3,211 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap modal carousel : modal-local </title>
-		<meta name="description" content="Kerbi" />
-		<meta name="keywords" content="Kerbi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
-		<link href="components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
-		<link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
-		<link href="css/demos.css" rel="stylesheet" />
-		
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal-carousel.min.css">
+		<style>
+			.nav .external {
+				margin-top: 30px;
+			}
+			.row + .row,
+			.row-fluid + .row-fluid {
+				margin-top: 20px;
+			}
+			.btn .glyphicon + span {
+				margin-left: .5em;
+			}
+			@media (min-width: 768px) {
+				h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
+					margin-top: 0;
+				}
+			}
+			
+		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span12">
+				<div class="col-sm-12">
 					<h1>Bootstrap modal carousel</h1>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span3">
+				<div class="col-sm-3">
 					<ul class="nav nav-pills nav-stacked">
-						<li class=""><a href="index.html">Presentation</a></li>
-						<li class=""><a href="modal-carousel.html">Modal-carousel</a></li>
-						<li class=""><a href="carousel-fit.html">Carousel-fit</a></li>
-						<li class=" active "><a href="modal-local.html">Modal-local</a></li>
-						<li class=""><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
-					</ul>
-
-					<ul class="nav nav-pills">
-						<li>
+						<li class="">
+							<a href="index.html">Presentation</a>
+						</li>
+						<li class="">
+							<a href="modal-carousel.html">Modal-carousel</a>
+							
+						</li>
+						<li class="">
+							<a href="carousel-fit.html">Carousel-fit</a>
+							
+						</li>
+						<li class=" active ">
+							<a href="modal-local.html">Modal-local</a>
+							
+								<ul>
+									
+										<li><a href="#demo">Demo</a></li>
+									
+										<li><a href="#usage">Usage</a></li>
+									
+										<li><a href="#events">Events</a></li>
+									
+								</ul>
+							
+						</li>
+						<li class="">
+							<a href="modal-fullscreen.html">Modal-fullscreen</a>
+							
+						</li>
+						<li class="">
+							<a href="more-examples.html">More examples</a>
+							
+						</li>
+						<li class="external">
 							<a href="https://github.com/noreiller/bootstrap-modal-carousel">
-								<i class="icon-info-sign"></i>
+								<span class="glyphicon glyphicon-new-window"></span>
 								<span>GitHub project</span>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div class="span9">
+				<div class="col-sm-9">
 
 
-<h3>Purpose</h3>
-<p>The <code>bootstrap-modal-local.js</code> library let you show in a modal box a part of content of your page.</p>
+<h2>Purpose</h2>
+<p>Detach a part of the content of the page to a modal box.</p>
 
 <hr />
 
-<h3>Demo</h3>
-<p>
-	<button id="myButton" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" data-local="#myContent">
-		<i class="icon-resize-full icon-white"></i>
-		<span>View the following content in modal</span>
+<h2 id="demo">Demo</h2>
+
+<p>The default one from Twitter Bootstrap<br />
+	<button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+		<span class="glyphicon glyphicon-fullscreen"></span>
+		<span>See it in action</span>
 	</button>
 </p>
 
-<div id="myContent"></div>
+<p><span id="myContent">Detach the current sentence to the modal box</span><br />
+	<button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModal" data-local="#myContent">
+		<span class="glyphicon glyphicon-fullscreen"></span>
+		<span>See it in action</span>
+	</button>
+</p>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>Modal header</h3>
-	</div>
-	<div class="modal-body">
-		<p>One fine body…</p>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal">Close</a>
-	</div>
+<hr />
+
+<h2 id="usage">Usage</h2>
+<p>There is two ways to proceed: using the data attributes or the JavaScript way.</p>
+
+<h3>Via data attributes</h3>
+<p>Based on the default Twitter Bootstrap code of the modal component, the only change you need to do is to add on the controller element an attribute <code>data-local="#myContent"</code> to target the element.</p>
+
+<pre><code>&lt;button type=&quot;button&quot; class=&quot;btn&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; data-local=&quot;#myContent&quot;&gt;Demo&lt;/button&gt;</code></pre>
+
+<h3>Via JavaScript</h3>
+<p>Based on the default Twitter Bootstrap code of the modal component, the only change you need to do is to add on the controller element an attribute <code>data-local="#myContent"</code> to target the element.</p>
+
+<pre><code>$(&#039;#myModal&#039;).modal({
+	local: &#039;#myContent&#039;
+	...
+});</code></pre>
+
+<h3>Common parts</h3>
+<pre><code>&lt;script src=&quot;modal-local.js&quot;/&gt;&lt;/script/&gt;
+
+&lt;div id=&quot;myContent&quot;&gt;This is another content.&lt;/div&gt;
+
+&lt;div class=&quot;modal fade&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
+      &lt;h4 class=&quot;modal-title&quot;&gt;Modal title&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;One fine body&hellip;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;&lt;!-- /.modal --&gt;</code></pre>
+
+<h3 id="events">Events</h3>
+<p>Some events are trigerred before and after the content has been detached/replaced.</p>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th style="width: 150px;">Event Type</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>detach.bs.local</td>
+				<td>This event fires immediately when the content is going to be detached.</td>
+			</tr>
+			<tr>
+				<td>detached.bs.local</td>
+				<td>This event is fired when the detached content has been made placed in the modal.</td>
+			</tr>
+			<tr>
+				<td>replace.bs.local</td>
+				<td>This event is fired immediately when the modal is going to hide.</td>
+			</tr>
+			<tr>
+				<td>replaced.bs.local</td>
+				<td>This event is fired when the detached content has been made replaced at its origin place.</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 
-<hr />
+<div class="modal fade   " id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				
+				
+					<h4 class="modal-title">Modal title</h4>
+				
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+			</div>
+			
+				<div class="modal-footer">
+					
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					
+				</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-<h3>Code</h3>
-<p>Add the attribute <code>data-local="#myContent"</code> to the button and it will detach the content of the <code>#myContent</code> element to <code>#myModal</code>.</p>
-
-<pre class="prettyprint linenums">&lt;button id=&quot;myButton&quot; type=&quot;button&quot; class=&quot;btn btn-success&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; data-local=&quot;#myContent&quot;&gt;
-	&lt;i class=&quot;icon-resize-full icon-white&quot;&gt;&lt;/i&gt;
-	&lt;span&gt;View the following content in modal&lt;/span&gt;
-&lt;/button&gt;
-
-&lt;div id=&quot;myContent&quot;&gt;&lt;/div&gt;
-
-&lt;div id=&quot;myModal&quot; class=&quot;modal hide fade&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
-	&lt;div class=&quot;modal-header&quot;&gt;
-		&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
-		&lt;h3&gt;Modal header&lt;/h3&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;modal-body&quot;&gt;
-		&lt;p&gt;One fine body&hellip;&lt;/p&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;modal-footer&quot;&gt;
-		&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</pre>
-
-<hr />
-
-<h3>JS</h3>
-<pre class="prettyprint linenums">&lt;script src=&quot;../components/bootstrap/docs/assets/js/jquery.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../components/bootstrap/docs/assets/js/bootstrap.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;js/bootstrap-modal-local.js&quot;&gt;&lt;/script&gt;</pre>
 
 				</div>
 			</div>
 		</div>
 
-		<script src="components/bootstrap/docs/assets/js/jquery.js"></script>
-		<script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
-		<script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
-		<script src="js/demos.js"></script>
-		
-			<script src="js/bootstrap-modal-local.js"></script>
-		
-			<script src="js/demo-modal-local.js"></script>
-		
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-24259046-6']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-modal-carousel.min.js"></script>
+		<script src="js/demo.min.js"></script>
 	</body>
 </html>
 

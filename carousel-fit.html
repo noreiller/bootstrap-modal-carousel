@@ -3,137 +3,218 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bootstrap modal carousel : carousel-fit </title>
-		<meta name="description" content="Kerbi" />
-		<meta name="keywords" content="Kerbi" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
-		<link href="components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
-		<link href="components/bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
-		<link href="css/demos.css" rel="stylesheet" />
-		
-			<link href="css/bootstrap-carousel-fit.css" rel="stylesheet" />
-		
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal-carousel.min.css">
+		<style>
+			.nav .external {
+				margin-top: 30px;
+			}
+			.row + .row,
+			.row-fluid + .row-fluid {
+				margin-top: 20px;
+			}
+			.btn .glyphicon + span {
+				margin-left: .5em;
+			}
+			@media (min-width: 768px) {
+				h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
+					margin-top: 0;
+				}
+			}
+			
+		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
-				<div class="span12">
+				<div class="col-sm-12">
 					<h1>Bootstrap modal carousel</h1>
 				</div>
 			</div>
 			<div class="row">
-				<div class="span3">
+				<div class="col-sm-3">
 					<ul class="nav nav-pills nav-stacked">
-						<li class=""><a href="index.html">Presentation</a></li>
-						<li class=""><a href="modal-carousel.html">Modal-carousel</a></li>
-						<li class=" active "><a href="carousel-fit.html">Carousel-fit</a></li>
-						<li class=""><a href="modal-local.html">Modal-local</a></li>
-						<li class=""><a href="modal-fullscreen.html">Modal-fullscreen</a></li>
-					</ul>
-
-					<ul class="nav nav-pills">
-						<li>
+						<li class="">
+							<a href="index.html">Presentation</a>
+						</li>
+						<li class="">
+							<a href="modal-carousel.html">Modal-carousel</a>
+							
+						</li>
+						<li class=" active ">
+							<a href="carousel-fit.html">Carousel-fit</a>
+							
+								<ul>
+									
+										<li><a href="#demo">Demo</a></li>
+									
+										<li><a href="#usage">Usage</a></li>
+									
+										<li><a href="#events">Events</a></li>
+									
+								</ul>
+							
+						</li>
+						<li class="">
+							<a href="modal-local.html">Modal-local</a>
+							
+						</li>
+						<li class="">
+							<a href="modal-fullscreen.html">Modal-fullscreen</a>
+							
+						</li>
+						<li class="">
+							<a href="more-examples.html">More examples</a>
+							
+						</li>
+						<li class="external">
 							<a href="https://github.com/noreiller/bootstrap-modal-carousel">
-								<i class="icon-info-sign"></i>
+								<span class="glyphicon glyphicon-new-window"></span>
 								<span>GitHub project</span>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div class="span9">
+				<div class="col-sm-9">
 
 
-<h3>Purpose</h3>
-
-<p>The <code>bootstrap-carousel-fit.js</code> and <code>bootstrap-carousel-fit.css</code> package center the carousel slides and fit their captions according to the image width.</p>
-
-<p>The caption effects are controlled by CSS with 3 possible cases you can set by choosing the element class :</p>
-<ol>
-	<li>display caption when active : <code>.carousel-caption-active</code></li>
-	<li>display caption on hover : <code>.carousel-caption-hover</code></li>
-	<li>hide caption on hover : <code>.carousel-caption-hide</code></li>
-</ol>
+<h2>Purpose</h2>
+<p>Adapt a carousel to its slides.</p>
 
 <hr />
 
-<h3>Demo</h3>
-<p>
-	<button id="myButtonCaptionHover" type="button" class="btn btn-success">
-		<span>Caption on hover</span>
-	</button>
-	<button id="myButtonCaptionActive" type="button" class="btn btn-info">
-		<span>Caption on active</span>
-	</button>
-	<button id="myButtonCaptionHide" type="button" class="btn btn-info">
-		<span>Hide caption on hover</span>
-	</button>
-	<button id="myButtonCaptionNone" type="button" class="btn btn-info">
-		<span>No effect</span>
-	</button>
-</p>
+<h2 id="demo">Demo</h2>
 
-<div id="myCarousel" class="carousel slide carousel-fit carousel-caption-hover">
-	<!-- Carousel items -->
-	<div class="carousel-inner"></div>
-	<!-- Carousel nav -->
-	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+<form class="form-inline" role="form">
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="carouselFit" id="carouselFit" checked="true" />
+			Enable/disable the auto-fit
+		</label>
+	</div>
+</form>
+
+<div id="myCarousel" class="carousel slide carousel-fit" data-ride="carousel" data-interval="60000">
+	
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+	
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide">
+			<div class="carousel-caption">
+				<h3>First slide label</h3>
+				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img data-src="holder.js/750x400/auto/#666:#444/text:Second slide" alt="Second slide">
+			<div class="carousel-caption">
+				<h3>Second slide label</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img data-src="holder.js/600x300/auto/#555:#333/text:Third slide" alt="Third slide">
+			<div class="carousel-caption">
+				<h3>Third slide label</h3>
+				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+			</div>
+		</div>
+	</div>
+
+	
+		<!-- Controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	
 </div>
 
-<hr />
-
-<h3>Code</h3>
-<ol>
-	<li>Add the class name <code>.carousel-fit</code> to the carousel element to have the caption fitted.</li>
-	<li>You can also add one of the three class names <code>.carousel-caption-active</code>, <code>.carousel-caption-hover</code> or <code>.carousel-caption-hide</code> to the carousel element to add some effects to the captions.</li>
-</ol>
-
-<pre class="prettyprint linenums">&lt;div id=&quot;myCarousel&quot; class=&quot;carousel slide carousel-fit carousel-caption-hover&quot;&gt;
-	&lt;!-- Carousel items --&gt;
-	&lt;div class=&quot;carousel-inner&quot;&gt;&lt;/div&gt;
-	&lt;!-- Carousel nav --&gt;
-	&lt;a class=&quot;carousel-control left&quot; href=&quot;#myCarousel&quot; data-slide=&quot;prev&quot;&gt;&amp;lsaquo;&lt;/a&gt;
-	&lt;a class=&quot;carousel-control right&quot; href=&quot;#myCarousel&quot; data-slide=&quot;next&quot;&gt;&amp;rsaquo;&lt;/a&gt;
-&lt;/div&gt;</pre>
 
 <hr />
 
-<h3>CSS</h3>
-<pre class="prettyprint linenums">&lt;link href=&quot;../components/bootstrap/docs/assets/css/bootstrap.css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;link href=&quot;../components/bootstrap/docs/assets/css/bootstrap-responsive.css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;link href=&quot;css/bootstrap-carousel-fit.css&quot; rel=&quot;stylesheet&quot; /&gt;</pre>
+<h2 id="usage">Usage</h2>
+<p>Add the <code>.carousel-fit</code> class name to the carousel element, and that's it !</p>
+<pre><code>&lt;link href=&quot;carousel-fit.css&quot; rel=&quot;stylesheet&quot; /&gt;
 
-<hr />
+&lt;script src=&quot;carousel-fit.js&quot;/&gt;&lt;/script/&gt;
 
-<h3>JS</h3>
-<pre class="prettyprint linenums">&lt;script src=&quot;../components/bootstrap/docs/assets/js/jquery.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../components/bootstrap/docs/assets/js/bootstrap.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;js/bootstrap-carousel-fit.js&quot;&gt;&lt;/script&gt;</pre>
+&lt;div id=&quot;myCarousel&quot; class=&quot;carousel slide carousel-fit&quot; data-ride=&quot;carousel&quot;&gt;
+  &lt;!-- Indicators --&gt;
+  &lt;ol class=&quot;carousel-indicators&quot;&gt;
+    &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;
+    &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+    &lt;li data-target=&quot;#myCarousel&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;!-- Wrapper for slides --&gt;
+  &lt;div class=&quot;carousel-inner&quot;&gt;
+    &lt;div class=&quot;item active&quot;&gt;
+      &lt;img data-src=&quot;holder.js/900x500/auto/#777:#555/text:First slide&quot; alt=&quot;First slide&quot;&gt;
+      &lt;div class=&quot;carousel-caption&quot;&gt;
+        &lt;h3&gt;First slide label&lt;/h3&gt;
+        &lt;p&gt;Nulla vitae elit libero, a pharetra augue mollis interdum.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+      &lt;img data-src=&quot;holder.js/750x400/auto/#666:#444/text:Second slide&quot; alt=&quot;Second slide&quot;&gt;
+      &lt;div class=&quot;carousel-caption&quot;&gt;
+        &lt;h3&gt;Second slide label&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+      &lt;img data-src=&quot;holder.js/600x300/auto/#555:#333/text:Third slide&quot; alt=&quot;Third slide&quot;&gt;
+      &lt;div class=&quot;carousel-caption&quot;&gt;
+        &lt;h3&gt;Third slide label&lt;/h3&gt;
+        &lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Controls --&gt;
+  &lt;a class=&quot;left carousel-control&quot; href=&quot;#myCarousel&quot; data-slide=&quot;prev&quot;&gt;
+    &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot;&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;a class=&quot;right carousel-control&quot; href=&quot;#myCarousel&quot; data-slide=&quot;next&quot;&gt;
+    &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 id="events">Events</h3>
+<p>The <code>fit.bs.local</code> event is trigerred each time the carousel is adjusted. The new <code>height</code> is passed to the event.</p>
 
 				</div>
 			</div>
 		</div>
 
-		<script src="components/bootstrap/docs/assets/js/jquery.js"></script>
-		<script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
-		<script src="components/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
-		<script src="js/demos.js"></script>
-		
-			<script src="js/bootstrap-carousel-fit.js"></script>
-		
-			<script src="js/demo-carousel-fit.js"></script>
-		
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-24259046-6']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-modal-carousel.min.js"></script>
+		<script src="js/demo.min.js"></script>
 	</body>
 </html>
 
+
+<script>
+  var checkCarouselFit = function () {
+    $('#myCarousel')[$('#carouselFit').is(':checked') ? 'addClass' : 'removeClass']('carousel-fit');
+    if (!$('#carouselFit').is(':checked')) {
+      $('#myCarousel').height('auto');
+    }
+  };
+	$('#carouselFit').on('change', checkCarouselFit);
+  checkCarouselFit();
+</script>

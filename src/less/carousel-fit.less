@@ -1,0 +1,33 @@
+.carousel.carousel-fit {
+	position: relative;
+
+	&.slide {
+		/* Hide the content outside the carousel when sliding */
+		overflow: hidden;
+	}
+
+	/* When sliding, use the maximum height we have */
+	.carousel-inner {
+		> .next,
+		> .prev {
+			bottom: 0;
+		}
+	}
+
+	/* Center horizontally the content of the slides */
+	.carousel-inner > .item {
+		text-align: center;
+	}
+
+	/* To be centered, the images of the slides need to be inline */
+	.carousel-inner > .item > img {
+		display: inline-block;
+	}
+
+	/* Maximize the captions in the wrapper */
+	.carousel-inner > .item > .carousel-caption {
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}

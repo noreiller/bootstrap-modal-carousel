@@ -1,0 +1,38 @@
+<div class="modal fade {{#if fullscreen}}modal-fullscreen{{/if}} {{#if fullscreenForced}}force-fullscreen{{/if}} {{#if footerBottom}}footer-to-bottom{{/if}}" id="{{#if id}}{{id}}{{else}}myModal{{/if}}"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				{{#if alternateCloseButton}}
+					<button type="button" class="btn btn-danger pull-right" data-dismiss="modal" aria-hidden="true">
+						<span class="glyphicon glyphicon-remove"></span>
+						<span>Close</span>
+					</button>
+				{{else}}
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				{{/if}}
+				{{#if title}}
+					<h4 class="modal-title">Modal title</h4>
+				{{/if}}
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+			</div>
+			{{#if footer}}
+				<div class="modal-footer">
+					{{#if carouselControls}}
+						<!-- Controls -->
+						<a class="left carousel-control" href="#{{#if carouselId}}{{carouselId}}{{else}}myCarousel{{/if}}" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#{{#if carouselId}}{{carouselId}}{{else}}myCarousel{{/if}}" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					{{else}}
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					{{/if}}
+				</div>
+			{{/if}}
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

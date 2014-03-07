@@ -1,0 +1,28 @@
+{
+  "name": "boostrap-modal-carousel",
+  "version": "2.0.0",
+  "authors": [
+    "Aurélien MANCA <aurelien@amanca.fr>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "dist"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "holderjs": "~2.3.1"
+  },
+  "main": [
+    "docs/css/bootstrap-modal-fullscreen.css",
+    "docs/css/bootstrap-carousel-fit.css",
+    "docs/js/bootstrap-carousel-fit.js",
+    "docs/js/bootstrap-modal-local.js",
+    "docs/js/bootstrap-modal-fullscreen.js",
+    "docs/js/bootstrap-modal-carousel.js"
+  ]
+}

@@ -1,0 +1,45 @@
+<div id="{{#if id}}{{id}}{{else}}myCarousel{{/if}}" class="carousel slide carousel-fit" data-ride="carousel" data-interval="60000">
+	{{#if indicators}}
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#{{#if id}}{{id}}{{else}}myCarousel{{/if}}" data-slide-to="0" class="active"></li>
+			<li data-target="#{{#if id}}{{id}}{{else}}myCarousel{{/if}}" data-slide-to="1"></li>
+			<li data-target="#{{#if id}}{{id}}{{else}}myCarousel{{/if}}" data-slide-to="2"></li>
+		</ol>
+	{{/if}}
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide">
+			<div class="carousel-caption">
+				<h3>First slide label</h3>
+				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img data-src="holder.js/750x400/auto/#666:#444/text:Second slide" alt="Second slide">
+			<div class="carousel-caption">
+				<h3>Second slide label</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img data-src="holder.js/600x300/auto/#555:#333/text:Third slide" alt="Third slide">
+			<div class="carousel-caption">
+				<h3>Third slide label</h3>
+				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+			</div>
+		</div>
+	</div>
+
+	{{#if controls}}
+		<!-- Controls -->
+		<a class="left carousel-control" href="#{{#if id}}{{id}}{{else}}myCarousel{{/if}}" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#{{#if id}}{{id}}{{else}}myCarousel{{/if}}" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	{{/if}}
+</div>

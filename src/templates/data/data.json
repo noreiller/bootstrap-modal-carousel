@@ -12,13 +12,17 @@
 		, "menu": {
 			"carouselFit": true
 		}
-		, "css": [
-			{ "path": "css/bootstrap-carousel-fit.css" }
-		]
-		, "js": [
-			{ "path": "js/bootstrap-carousel-fit.js" }
-			, { "path": "js/demo-carousel-fit.js" }
-		]
+		, "submenus": {
+			"demo": "Demo"
+			, "usage": "Usage"
+			, "events": "Events"
+		}
+		, "carousels": {
+			"default": {
+				"indicators": true
+				, "controls": true
+			}
+		}
 	}
 	, "modal-carousel": {
 		"key": "modal-carousel"
@@ -26,17 +30,29 @@
 		, "menu": {
 			"modalCarousel": true
 		}
-		, "css": [
-			{ "path": "css/bootstrap-modal-fullscreen.css" }
-			, { "path": "css/bootstrap-carousel-fit.css" }
-		]
-		, "js": [
-			{ "path": "js/bootstrap-carousel-fit.js" }
-			, { "path": "js/bootstrap-modal-carousel.js" }
-			, { "path": "js/bootstrap-modal-fullscreen.js" }
-			, { "path": "js/bootstrap-modal-local.js" }
-			, { "path": "js/demo-modal-carousel.js" }
-		]
+		, "submenus": {
+			"demo": "Demo"
+			, "usage": "Usage"
+		}
+		, "modals": {
+			"default": {
+				"title": true
+				, "footer": true
+			}
+			, "fullscreen": {
+				"title": true
+				, "footer": true
+				, "fullscreen": true
+				, "fullscreenForced": true
+				, "id": "myModalFullscreen"
+			}
+		}
+		, "carousels": {
+			"default": {
+				"indicators": true
+				, "controls": true
+			}
+		}
 	}
 	, "modal-fullscreen": {
 		"key": "modal-fullscreen"
@@ -44,13 +60,29 @@
 		, "menu": {
 			"modalFullscreen": true
 		}
-		, "css": [
-			{ "path": "css/bootstrap-modal-fullscreen.css" }
-		]
-		, "js": [
-			{ "path": "js/bootstrap-modal-fullscreen.js" }
-			, { "path": "js/demo-modal-fullscreen.js" }
-		]
+		, "submenus": {
+			"demo": "Demo"
+			, "usage": "Usage"
+		}
+		, "modals": {
+			"default": {
+				"title": true
+				, "footer": true
+			}
+			, "fullscreen": {
+				"title": true
+				, "footer": true
+				, "fullscreen": true
+				, "id": "myModalFullscreen"
+			}
+			, "fullscreenFooterBottom": {
+				"title": true
+				, "footer": true
+				, "fullscreen": true
+				, "footerBottom": true
+				, "id": "myModalFooterBottom"
+			}
+		}
 	}
 	, "modal-local": {
 		"key": "modal-local"
@@ -58,10 +90,58 @@
 		, "menu": {
 			"modalLocal": true
 		}
-		, "css": []
-		, "js": [
-			{ "path": "js/bootstrap-modal-local.js" }
-			, { "path": "js/demo-modal-local.js" }
-		]
+		, "submenus": {
+			"demo": "Demo"
+			, "usage": "Usage"
+			, "events": "Events"
+		}
+		, "modals": {
+			"default": {
+				"title": true
+				, "footer": true
+			}
+		}
+	}
+	, "more-examples": {
+		"key": "more-examples"
+		, "name": "more-examples"
+		, "menu": {
+			"moreExamples": true
+		}
+		, "submenus": {
+			"common": "Common parts"
+			, "example1": "Black theme"
+			, "example2": "Captions animations"
+		}
+		, "modals": {
+			"example1": {
+				"title": true
+				, "footer": true
+				, "fullscreen": true
+				, "fullscreenForced": true
+				, "id": "myModal1"
+				, "alternateCloseButton": true
+				, "carouselControls": true
+				, "carouselId": "myCarousel1"
+			}
+			, "example2": {
+				"title": true
+				, "footer": true
+				, "fullscreen": true
+				, "fullscreenForced": true
+				, "id": "myModal2"
+				, "alternateCloseButton": true
+				, "carouselControls": true
+				, "carouselId": "myCarousel2"
+			}
+		}
+		, "carousels": {
+			"example1": {
+				"id": "myCarousel1"
+			}
+			, "example2": {
+				"id": "myCarousel2"
+			}
+		}
 	}
 }

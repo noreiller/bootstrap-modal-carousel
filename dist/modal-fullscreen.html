@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap modal carousel : modal-fullscreen </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-modal-carousel.min.css">
+		<style>
+			.nav .external {
+				margin-top: 30px;
+			}
+			.row + .row,
+			.row-fluid + .row-fluid {
+				margin-top: 20px;
+			}
+			.btn .glyphicon + span {
+				margin-left: .5em;
+			}
+			@media (min-width: 768px) {
+				h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
+					margin-top: 0;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1>Bootstrap modal carousel</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<ul class="nav nav-pills nav-stacked">
+						<li class="">
+							<a href="index.html">Presentation</a>
+						</li>
+						<li class="">
+							<a href="modal-carousel.html">Modal-carousel</a>
+							
+						</li>
+						<li class="">
+							<a href="carousel-fit.html">Carousel-fit</a>
+							
+						</li>
+						<li class="">
+							<a href="modal-local.html">Modal-local</a>
+							
+						</li>
+						<li class=" active ">
+							<a href="modal-fullscreen.html">Modal-fullscreen</a>
+							
+								<ul>
+									
+										<li><a href="#demo">Demo</a></li>
+									
+										<li><a href="#usage">Usage</a></li>
+									
+								</ul>
+							
+						</li>
+						<li class="">
+							<a href="more-examples.html">More examples</a>
+							
+						</li>
+						<li class="external">
+							<a href="https://github.com/noreiller/bootstrap-modal-carousel">
+								<span class="glyphicon glyphicon-new-window"></span>
+								<span>GitHub project</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-9">
+
+
+<h2>Purpose</h2>
+<p>Maximize a modal box on the screen.</p>
+
+<hr />
+
+<h2 id="demo">Demo</h2>
+
+<p>The default one from Twitter Bootstrap<br />
+	<button type="button" class="btn btn-xs btn-info" data-toggle="modal" data-target="#myModal">
+		<span class="glyphicon glyphicon-fullscreen"></span>
+		<span>See it in action</span>
+	</button>
+</p>
+
+<p>A simple fullscreen modal<br />
+	<button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target="#myModalFullscreen">
+		<span class="glyphicon glyphicon-fullscreen"></span>
+		<span>See it in action</span>
+	</button>
+</p>
+
+<hr />
+
+<h2 id="usage">Usage</h2>
+<p>Based on the default Twitter Bootstrap code of the modal component, add the class name <code>.modal-fullscreen</code> to the modal element to display it in fullscreen and that's it.</p>
+
+<pre><code>&lt;link href=&quot;modal-fullscreen.css&quot; rel=&quot;stylesheet&quot; /&gt;
+
+&lt;button type=&quot;button&quot; class=&quot;btn&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;Demo&lt;/button&gt;
+
+&lt;div class=&quot;modal fade modal-fullscreen force-fullscreen&quot; id=&quot;myModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;myModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;
+        &lt;h4 class=&quot;modal-title&quot;&gt;Modal title&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;One fine body&hellip;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;&lt;!-- /.modal --&gt;</code></pre>
+
+<div class="modal fade   " id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				
+				
+					<h4 class="modal-title">Modal title</h4>
+				
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+			</div>
+			
+				<div class="modal-footer">
+					
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					
+				</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-fullscreen  " id="myModalFullscreen"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				
+				
+					<h4 class="modal-title">Modal title</h4>
+				
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+			</div>
+			
+				<div class="modal-footer">
+					
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					
+				</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFooterBottom"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				
+				
+					<h4 class="modal-title">Modal title</h4>
+				
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+			</div>
+			
+				<div class="modal-footer">
+					
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					
+				</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-modal-carousel.min.js"></script>
+		<script src="js/demo.min.js"></script>
+	</body>
+</html>
+

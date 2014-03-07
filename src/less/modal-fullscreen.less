@@ -1,0 +1,53 @@
+.modal.modal-fullscreen {
+	/* Maximize the main wrappers on the screen */
+	.modal-dialog,
+	.modal-content {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	/* Make the parent wrapper of the modal box a full-width block */
+	.modal-dialog {
+		margin: 0;
+		width: 100%;
+	}
+
+	/* Remove borders and effects on the content */
+	.modal-content {
+		border: none;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		-webkit-box-shadow: inherit;
+		-moz-box-shadow: inherit;
+		-o-box-shadow: inherit;
+		box-shadow: inherit;
+	}
+
+
+	/**
+	 * /!\ By using this feature, you force the header and footer to be placed
+	 * in an absolute position. You must handle by yourself the margin of the
+	 * content.
+	 */
+	&.force-fullscreen {
+		/* Remove the padding inside the body */
+		.modal-body {
+			padding: 0;
+		}
+		.modal-header,
+		.modal-footer {
+			left: 0;
+			position: absolute;
+			right: 0;
+		}
+		.modal-header {
+			top: 0;
+		}
+		.modal-footer {
+			bottom: 0;
+		}
+	}
+}

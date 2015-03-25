@@ -1,28 +1,26 @@
 {
   "name": "bootstrap-modal-carousel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "authors": [
     "Aurélien MANCA <aurelien@amanca.fr>"
   ],
+  "homepage": "https://noreiller.github.io/bootstrap-modal-carousel",
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "Gruntfile.js",
     "node_modules",
     "bower_components",
     "test",
     "tests",
-    "dist"
+    "src"
   ],
-  "dependencies": {
+  "devDependencies": {
     "bootstrap": "~3.1.1",
     "holderjs": "~2.3.1"
   },
   "main": [
-    "docs/css/bootstrap-modal-fullscreen.css",
-    "docs/css/bootstrap-carousel-fit.css",
-    "docs/js/bootstrap-carousel-fit.js",
-    "docs/js/bootstrap-modal-local.js",
-    "docs/js/bootstrap-modal-fullscreen.js",
-    "docs/js/bootstrap-modal-carousel.js"
+    "dist/css/bootstrap-modal-carousel.min.css",
+    "dist/js/bootstrap-modal-carousel.min.js"
   ]
 }

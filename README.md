@@ -18,6 +18,11 @@ In the "dist" folder, you'll find the CSS and JS assets. To quickly use the plug
 
 ## Changelog
 
+### 2.0.1
+
+* Fixed Bower packaging informations
+
+
 ### 2.0.0
 
 * Updated the twitter bootstrap dependency to version 3.x
